@@ -1,6 +1,8 @@
 const db = require("../connections/DBConnection.js");
 
-const getSleepHours = (user_id) => {};
+const getSleepHours = (user_id) => {
+  return db("d4f7jsp1ogl74q").select("*");
+};
 
 const getEntriesByDate = (user_id, date) => {};
 

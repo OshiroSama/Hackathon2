@@ -9,8 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/api/sleep", router);
 
-app.use("have not decided yet", express.static(__dirname + "/public"));
+app.use("/", express.static(__dirname + "/public"));
 
 app.listen(process.env.PORT || 8080, () => {
   console.log(`running on port ${process.env.PORT || 8080}`);
