@@ -9,13 +9,13 @@ const {
 
 const router = express.Router();
 
-router.get("have not decided yet", _getSleepHours);
-router.get("have not decided yet", _getEntriesByDate);
+router.get("/getSleep", _getSleepHours);
+router.get("/getDate", _getEntriesByDate);
 
-router.post("have not decided yet", _insertEntry);
+router.post("/insert", _insertEntry);
 
-router.update("have not decided yet", _updateEntry);
+router.put("/update", _updateEntry);
 
-router.delete("have not decided yet", _deleteEntry);
+router.delete("/delete", _deleteEntry);
 
 module.exports = router;
