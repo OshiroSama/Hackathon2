@@ -7,7 +7,7 @@ const {
 } = require("../modules/queries.js");
 
 const _getSleepHours = (req, res) => {
-  getSleepHours()
+  getSleepHours(1)
     .then((data) => {
       res.json(data);
     })

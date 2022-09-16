@@ -1,10 +1,14 @@
 const db = require("../connections/DBConnection.js");
 
 const getSleepHours = (user_id) => {
-  return db("d4f7jsp1ogl74q").select("*");
+  return db("sleep").select("*").where({ user_id: user_id });
 };
 
-const getEntriesByDate = (user_id, date) => {};
+const getEntriesByDate = (user_id, date) => {
+  return db("sleep")
+    .select("date", "hours")
+    .where({ user_id: user_id, date: date });
+};
 
 const insertEntry = (user_id, date, hours) => {};
 

@@ -9,7 +9,7 @@ const {
 
 const router = express.Router();
 
-router.get("/getSleep", _getSleepHours);
+router.get("/getSleep/", _getSleepHours);
 router.get("/getDate", _getEntriesByDate);
 
 router.post("/insert", _insertEntry);
