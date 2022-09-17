@@ -6,7 +6,11 @@ const getSleepHours = (user_id) => {
 
 const getEntriesByDate = (user_id, date) => {};
 
-const insertEntry = (user_id, date, hours) => {};
+const insertEntry = (user_id, date, hours) => {
+  return db('sleep')
+    .insert(insert)
+    .returning('*')
+};
 
 const updateEntry = (user_id, date, hours) => {};
 
