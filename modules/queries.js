@@ -1,7 +1,7 @@
 const db = require("../connections/DBConnection.js");
 
 const getSleepHours = (user_id) => {
-  return db("sleep").select("*").where({ user_id: user_id });
+  return db("sleep").select("date", "hours").where({ user_id: user_id });
 };
 
 const getEntriesByDate = (user_id, date) => {
