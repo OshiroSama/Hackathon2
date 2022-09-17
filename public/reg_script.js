@@ -19,7 +19,7 @@ let user;
           email: email, 
           password: password
       }
-      console.log(user);
+      // console.log(user);
       
       fetch ('./register', {
           method:'POST',
@@ -32,10 +32,15 @@ let user;
         .then(res => res.json())
         .then(data => {
           console.log(data)
-          let id = data[0].user_id;
+          if(data.msg) {
+            alert(`this user name already exists`)
+          } else {
+            let id = data[0].user_id;
           console.log(id)
           let url = `./home/${id}`
           window.open(url,'_blank');
+          }
+          
         })
       .catch(e => console.log(e))
       })
