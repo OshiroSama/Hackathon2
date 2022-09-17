@@ -17,10 +17,28 @@ const deleteEntry = (user_id, date) => {
     .returning("*");
 };
 
+//adding registration & login logic
+const checkUser = (email) =>{
+  //if returns 0 send back that user needs to register
+  return db('users')
+    .select("*")
+    .where({email:email})
+}
+
+const addUser = (user) => {
+  return db('users')
+    .insert(user)
+    .returning('*')
+}
+
+
 module.exports = {
   getSleepHours,
   getEntriesByDate,
   insertEntry,
   updateEntry,
   deleteEntry,
+  checkUser,
+  addUser
 };
+
