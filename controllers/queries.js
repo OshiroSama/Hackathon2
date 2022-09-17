@@ -68,8 +68,14 @@ const _deleteEntry = (req, res) => {
 const _checkUser = (req, res) => {
   checkUser(req.body.email)
     .then((data) => {
-      res.json(data);
-    })
+      console.log(data.length);
+      // if(data.length < 1){
+      //   //res.sendFile(path.join(__dirname + "/public/register.html"));
+      //   res.send('<script>alert(`this user is not in DB, please register`)</script>')
+      // }else {
+        res.json(data)
+      
+      })
     .catch((err) => {
       console.log(err);
       res.status(404).json({ msg: "This email is not registered, please, register" });
