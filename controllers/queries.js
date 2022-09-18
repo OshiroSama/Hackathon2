@@ -31,7 +31,7 @@ const _getEntriesByDate = (req, res) => {
 };
 
 const _insertEntry = (req, res) => {
-  insertEntry()
+  insertEntry(req.body)
     .then((data) => {
       res.json(data);
     })

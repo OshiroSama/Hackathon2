@@ -1,32 +1,35 @@
 let body = document.querySelector("body");
-let form = document.forms[0];
-let button = document.querySelector("#reg");
+let button = document.querySelector("#postSleep");
 let loginBtn = document.querySelector("#login")
-let password;
-let email;
-let user;
+let userId;
 
 
 
-    //if resp from server is ok  => get user json back, should take id as parad, and send get request to home page with this param redirect to logged in screen user:id
-// code on btn click works for reg
+
     button.addEventListener('click', (e)=>{
       e.preventDefault();
-      
-      password = document.querySelector("#password").value
-      email = document.querySelector("#email").value
-      user = {
-          email: email, 
-          password: password
+      currentUrl = window.location.href;
+      let user_id = currentUrl.replace('http://localhost:3000/home/','');
+      user_id = Number(user_id);
+      console.log(user_id)
+      date = document.querySelector("#date").value
+      hours = document.querySelector("#hours").value
+
+      insertValues = {
+          user_id: user_id,
+          date: date, 
+          hours: hours,
+          went_to_sleep: '2016-06-22 19:10:25-07',
+          woke_up:'2016-06-22 19:10:25-07'
       }
-      // console.log(user);
+      // console.log(insert);
       
-      fetch ('./register', {
+      fetch ('./insert', {
           method:'POST',
           headers:{
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(user)
+          body: JSON.stringify(insertValues)
         
         })
         .then(res => res.json())

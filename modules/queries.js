@@ -6,9 +6,9 @@ const getSleepHours = (user_id) => {
 
 const getEntriesByDate = (user_id, date) => {};
 
-const insertEntry = (user_id, date, hours) => {
+const insertEntry = (user_id, date, hours, went_to_sleep, woke_up) => {
   return db('sleep')
-    .insert(insert)
+    .insert(insertValues)
     .returning('*')
 };
 
