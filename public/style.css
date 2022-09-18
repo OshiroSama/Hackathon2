@@ -9,13 +9,11 @@
 }
 
 body {
-  background-color: #795695;
+  background-image: url("https://images.pexels.com/photos/1878095/pexels-photo-1878095.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load");
   background-attachment: static;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Roboto", sans-serif;
-
   /* add some image/animation from bottom of the page with purple overay, maybe lavander */
 }
 

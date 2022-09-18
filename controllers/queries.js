@@ -66,7 +66,7 @@ const _deleteEntry = (req, res) => {
 //login & reg
 
 const _checkUser = (req, res) => {
-  checkUser(req.body.email)
+  checkUser(req.body.email, req.body.password)
     .then((data) => {
       console.log(data.length);
       res.json(data);

@@ -44,7 +44,7 @@ function drawChart() {
 
     const divChart = document.createElement("div");
     divChart.setAttribute("id", "sleepChart");
-    divChart.classList.add("center");
+    divChart.classList.add("center", "rounded");
 
     document.body.appendChild(divChart);
 

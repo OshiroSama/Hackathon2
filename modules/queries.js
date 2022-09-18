@@ -26,10 +26,10 @@ const deleteEntry = (user_id, date) => {
     .returning("*");
 };
 
-const checkUser = (email) => {
+const checkUser = (email, password) => {
   // Check if a user exists
   // If returns 0 send back that user needs to register
-  return db("users").select("*").where({ email: email });
+  return db("users").select("*").where({ email: email, password: password });
 };
 
 const addUser = (user) => {
