@@ -86,7 +86,6 @@ button.addEventListener("click", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.msg) {
         statusMessage.innerHTML = "Action failed...";
       } else {

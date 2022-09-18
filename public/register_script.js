@@ -27,12 +27,10 @@ button.addEventListener("click", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.msg) {
         alert(`this user name already exists`);
       } else {
         let id = data[0].user_id;
-        console.log(id);
         let url = `./home/${id}`;
         window.open(url, "_blank");
       }
