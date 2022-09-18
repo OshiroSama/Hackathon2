@@ -1,4 +1,4 @@
-#myChart {
+/* #myChart {
   width: 100%;
   max-width: 1500px;
 }
@@ -6,4 +6,40 @@
 .center {
   margin: auto;
   padding: 4rem;
+} */
+body {
+  background-color: #795695;
+  background-attachment: static;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+
+  /* add some image/animation from bottom of the page with purple overay, maybe lavander */
+}
+
+main {
+  background-color: #371f76;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Alfa Slab One", cursive;
+}
+
+h1,
+h2,
+h4,
+p {
+  color: aliceblue;
+}
+
+button {
+  background-color: #795695;
+}
+
+a {
+  text-decoration: none;
+  color: #c8a4d4;
 }

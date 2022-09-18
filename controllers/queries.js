@@ -4,6 +4,8 @@ const {
   insertEntry,
   updateEntry,
   deleteEntry,
+  checkUser,
+  addUser,
 } = require("../modules/queries.js");
 
 const _getSleepHours = (req, res) => {
@@ -29,7 +31,7 @@ const _getEntriesByDate = (req, res) => {
 };
 
 const _insertEntry = (req, res) => {
-  insertEntry()
+  insertEntry(req.body)
     .then((data) => {
       res.json(data);
     })
@@ -61,10 +63,39 @@ const _deleteEntry = (req, res) => {
     });
 };
 
+//login & reg
+
+const _checkUser = (req, res) => {
+  checkUser(req.body.email)
+    .then((data) => {
+      console.log(data.length);
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res
+        .status(404)
+        .json({ msg: "This email is not registered, please, register" });
+    });
+};
+
+const _addUser = (req, res) => {
+  addUser(req.body)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).json({ msg: err });
+    });
+};
+
 module.exports = {
   _getSleepHours,
   _getEntriesByDate,
   _insertEntry,
   _updateEntry,
   _deleteEntry,
+  _checkUser,
+  _addUser,
 };
