@@ -4,7 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="http://localhost:3000/static/style.css" />
     <title>Home</title>
   </head>
-  <body></body>
+  <body class="text-center">
+    <main>
+      <div class="p-5 mb-4 bg-dark bg-gradient rounded-3">
+        <h1>Welcome</h1>
+        <p>How did you sleep today?</p>
+        <div id="inputs" class="w-50 m-auto">
+          <h4>Add you sleep data</h4>
+          <div class="form-floating mt-2 w-75 m-auto">
+            <input
+              type="date"
+              id="date"
+              class="form-control m-2"
+              placeholder="date"
+            />
+            <label for="date">Pick a date</label>
+          </div>
+          <div class="form-floating mt-2 w-75 m-auto">
+            <input
+              type="number"
+              id="hours"
+              min="0"
+              max="24"
+              class="form-control m-2"
+              placeholder="hours of sleep"
+            />
+            <label for="hours">Add hours</label>
+          </div>
+          <div class="form-floating mt-2 w-75 m-auto">
+            <button
+              id="postSleep"
+              type="button"
+              class="btn btn-lg w-100 m-2 btn-outline-light btn-lg px-4 me-sm-3 fw-bold"
+            >
+              Add data
+            </button>
+            <p id="status_message"></p>
+          </div>
+        </div>
+      </div>
+      <div id="graphs">
+        <h2>Sleep graphs</h2>
+      </div>
+    </main>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="http://localhost:3000/static/home_script.js"></script>
+  </body>
 </html>
