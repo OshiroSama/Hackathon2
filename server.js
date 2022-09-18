@@ -12,11 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/sleep", router);
 
 app.use("/", express.static(__dirname + "/public"));
+app.use('/static', express.static('public'));
 
 // doesn't work for me through routes)
 const {
   _addUser, 
-  _checkUser
+  _checkUser,
+  _insertEntry
 } = require("./controllers/queries.js");
 
 
@@ -28,11 +30,20 @@ app.get('/register',(req, res)=>{
 app.post('/register', _addUser);
 
 app.get('/home/:id',(req, res)=>{
-  res.sendFile(path.join(__dirname + "/public/home.html"));
+  res.sendFile(path.join(__dirname + "/public/homepage.html"));
   
 });
 
+
+// app.get('/home/script',(req, res)=>{
+//   res.sendFile(path.join(__dirname + "/public/postSleep_script.js"));
+  
+// });
+
+app.post('/home/insert',_insertEntry);
+
 app.get('/login',(req, res)=>{
+
   res.sendFile(path.join(__dirname + "/public/login.html"));
   
 });

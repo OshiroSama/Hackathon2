@@ -1,15 +1,12 @@
 let body = document.querySelector("body");
 let button = document.querySelector("#postSleep");
-let loginBtn = document.querySelector("#login")
 let userId;
+let insertValues={};
 
-
-
-
-    button.addEventListener('click', (e)=>{
+  button.addEventListener('click', (e)=>{
       e.preventDefault();
       currentUrl = window.location.href;
-      let user_id = currentUrl.replace('http://localhost:3000/home/','');
+      let user_id = currentUrl.replace('http://localhost:8800/home/','');
       user_id = Number(user_id);
       console.log(user_id)
       date = document.querySelector("#date").value
@@ -40,8 +37,7 @@ let userId;
           } else {
             let id = data[0].user_id;
           console.log(id)
-          let url = `./home/${id}`
-          window.open(url,'_blank');
+          
           }
           
         })
