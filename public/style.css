@@ -1,4 +1,4 @@
-/* #myChart {
+#sleepChart {
   width: 100%;
   max-width: 1500px;
 }
@@ -6,7 +6,8 @@
 .center {
   margin: auto;
   padding: 4rem;
-} */
+}
+
 body {
   background-color: #795695;
   background-attachment: static;
@@ -42,4 +43,8 @@ button {
 a {
   text-decoration: none;
   color: #c8a4d4;
+}
+
+#graphs {
+  padding-bottom: 10px;
 }

@@ -56,11 +56,12 @@ function drawChart() {
   };
 }
 
-let body = document.querySelector("body");
 const urlString = window.location.href;
 const uid = urlString.split("/")[4];
+let body = document.querySelector("body");
 let button = document.querySelector("#postSleep");
 let insertValues = {};
+let statusMessage = document.querySelector("#status_message");
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
@@ -87,10 +88,9 @@ button.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
       if (data.msg) {
-        alert(`this user name already exists`);
+        statusMessage.innerHTML = "Action failed...";
       } else {
-        let id = data[0].uid;
-        console.log(id);
+        statusMessage.innerHTML = "Updated successfully!";
       }
     })
     .catch((e) => console.log(e));
